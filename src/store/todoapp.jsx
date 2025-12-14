@@ -23,11 +23,20 @@ export const initialState ={
             state.todo =state.todo.filter((val) =>{
                return val.id!==action.payload
             })
-        }
+        },
+        editTodo: (state, action) => {
+            const {id, task, isEdited} =action.payload
+
+            const find =state.todo.find(va=> va.id ===id);
+            find.task =task;
+            find.isEdited =isEdited;
+            find.id =id
+          }
+          
     }
 })
 
 
 
-export const {addTodo, Check, deleteTodo} =todoApp.actions
+export const {addTodo, Check, deleteTodo,editTodo} =todoApp.actions
 export default todoApp.reducer
