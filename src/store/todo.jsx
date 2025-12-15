@@ -50,8 +50,8 @@ const minutes =date.getMinutes();
         setInputValue("");
        }} className='flex justify-between items-center gap-6'>
             <Input required  onChange={(e) =>{
-                setInputValue(e.target.value);
-            }} value={inputValue} />
+                setInputValue((e.target.value));
+            }} value={(inputValue)} />
             <Button htmlType="submit">{edited ? "Save": "Qo'shish"}</Button>
         </form>
         <h2>Jami: {todos.length}</h2>
